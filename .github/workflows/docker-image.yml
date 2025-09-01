@@ -66,4 +66,4 @@ jobs:
           docker pull ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
           docker stop django-app || true
           docker rm django-app || true
-          docker run -d -p 8080:80 --name django-app ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          docker run -d -p 80:80 --name django-app ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
